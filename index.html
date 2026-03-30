@@ -1018,6 +1018,172 @@
             height: 16px;
         }
 
+        /* ===== 部門介紹頁面樣式 ===== */
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 24px;
+            margin-top: var(--spacing-8);
+        }
+
+        .dept-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .dept-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .dept-card.blue:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        .dept-card.orange:hover {
+            border-color: rgba(249, 115, 22, 0.5);
+        }
+        .dept-card.red:hover {
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+        .dept-card.yellow:hover {
+            border-color: rgba(234, 179, 8, 0.5);
+        }
+        .dept-card.green:hover {
+            border-color: rgba(34, 197, 94, 0.5);
+        }
+        .dept-card.purple:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+        }
+
+        .dept-header {
+            padding: 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dept-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            position: relative;
+            z-index: 2;
+        }
+
+        .dept-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+            position: relative;
+            z-index: 3;
+        }
+
+        .dept-card.blue .dept-icon { color: var(--color-blue-500); }
+        .dept-card.orange .dept-icon { color: var(--color-orange-500); }
+        .dept-card.red .dept-icon { color: var(--color-red-500); }
+        .dept-card.yellow .dept-icon { color: var(--color-yellow-500); }
+        .dept-card.green .dept-icon { color: var(--color-green-500); }
+        .dept-card.purple .dept-icon { color: var(--color-purple-500); }
+
+        .dept-card:hover .dept-icon {
+            transform: scale(1.05);
+        }
+
+        .dept-card.blue:hover .dept-icon {
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), inset 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+        .dept-card.orange:hover .dept-icon {
+            border-color: rgba(249, 115, 22, 0.6);
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.5), inset 0 0 20px rgba(249, 115, 22, 0.15);
+        }
+        .dept-card.red:hover .dept-icon {
+            border-color: rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.5), inset 0 0 20px rgba(239, 68, 68, 0.15);
+        }
+        .dept-card.yellow:hover .dept-icon {
+            border-color: rgba(234, 179, 8, 0.6);
+            box-shadow: 0 0 30px rgba(234, 179, 8, 0.5), inset 0 0 20px rgba(234, 179, 8, 0.15);
+        }
+        .dept-card.green:hover .dept-icon {
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.5), inset 0 0 20px rgba(34, 197, 94, 0.15);
+        }
+        .dept-card.purple:hover .dept-icon {
+            border-color: rgba(168, 85, 247, 0.6);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), inset 0 0 20px rgba(168, 85, 247, 0.15);
+        }
+
+        .dept-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .dept-desc {
+            padding: 28px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            flex-grow: 1;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dept-stats {
+            padding: 24px 28px;
+            background: rgba(255, 255, 255, 0.025);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.88rem;
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            color: var(--text-primary);
+            font-weight: 500;
+            text-align: right;
+            max-width: 60%;
+        }
+
+        .stat-value.highlight {
+            color: var(--color-yellow-500);
+            text-shadow: 0 0 10px rgba(234, 179, 8, 0.4), 0 0 20px rgba(234, 179, 8, 0.2);
+        }
+
         /* ===== 連隊介紹頁面樣式 ===== */
         .company-block {
             background: var(--bg-secondary);
@@ -1342,7 +1508,7 @@
                             </div>
                         </div>
 
-                        <a href="DepartmentIntroduction.html" class="nav-card theme-red" role="button" aria-label="查看部門介紹">
+                        <div class="nav-card theme-red" onclick="switchPage('department')" role="button" tabindex="0" aria-label="查看部門介紹">
                             <div class="nav-card-bracket nav-card-bracket-top-left" aria-hidden="true"></div>
                             <div class="nav-card-bracket nav-card-bracket-top-right" aria-hidden="true"></div>
                             <div class="nav-card-bracket nav-card-bracket-bottom-left" aria-hidden="true"></div>
@@ -1369,7 +1535,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
                         <div class="nav-card theme-cyan" role="button" tabindex="0" aria-label="查看軍官士官介紹">
                             <div class="nav-card-bracket nav-card-bracket-top-left" aria-hidden="true"></div>
@@ -1779,6 +1945,247 @@
         </main>
     </div>
 
+    <!-- ===== 部門介紹頁面 ===== -->
+    <div id="department-page" class="page" role="main" aria-label="部門介紹頁面">
+        <!-- 麵包屑導航 -->
+        <nav class="breadcrumb" aria-label="麵包屑導航">
+            <a onclick="switchPage('home'); return false;">首頁</a>
+            <span class="breadcrumb-separator" aria-hidden="true">/</span>
+            <span>部門介紹</span>
+        </nav>
+
+        <!-- 主內容區 -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- 返回按鈕 -->
+                <button class="back-button" onclick="switchPage('home')" aria-label="返回首頁">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                    返回首頁
+                </button>
+
+                <!-- Hero 圖片區域 -->
+                <section class="hero-section" aria-labelledby="department-title">
+                    <div class="hero-image-container">
+                        <div class="hero-grid-bg" aria-hidden="true"></div>
+                        <img src="./image02.png"
+                             alt="部門介紹封面圖"
+                             class="hero-image"
+                             loading="eager"
+                             fetchpriority="high">
+                        <div class="hero-overlay" aria-hidden="true"></div>
+                        <div class="hero-bracket hero-bracket-top-left" aria-hidden="true"></div>
+                        <div class="hero-bracket hero-bracket-top-right" aria-hidden="true"></div>
+                        <div class="hero-bracket hero-bracket-bottom-left" aria-hidden="true"></div>
+                        <div class="hero-bracket hero-bracket-bottom-right" aria-hidden="true"></div>
+                        <div class="hero-title-container">
+                            <h1 id="department-title" class="hero-title-overview">部門介紹</h1>
+                            <p class="hero-subtitle">Departments · 奧地利 ODL 華人團</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 部門概況 -->
+                <section class="content-section" aria-labelledby="department-overview-title">
+                    <div class="intro-section">
+                        <h2 id="department-overview-title" class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                            部門概覽
+                        </h2>
+                        <div class="intro-text">
+                            <p>了解各部門職能、負責人與工作流程，構建軍團運轉的核心樞紐。</p>
+                            <p>每個部門都有其獨特的職責和專業領域，共同協作確保軍團的高效運作。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 部門卡片網格 -->
+                <div class="dept-grid">
+                    <!-- Department Card 1 - 參謀部 -->
+                    <div class="dept-card blue">
+                        <div class="dept-header">
+                            <div class="dept-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <h3 class="dept-name">參謀部 (General Staff)</h3>
+                        </div>
+                        <div class="dept-desc">
+                            負責軍團的戰略規劃、戰役指揮協調以及高層決策支持。參謀部是軍團的大腦，確保每一次行動都有周密的計劃與部署。
+                        </div>
+                        <div class="dept-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">部長</span>
+                                <span class="stat-value highlight">Oberst, Commander</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">幹部人數</span>
+                                <span class="stat-value">5 人</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">職責</span>
+                                <span class="stat-value">戰略制定、戰役指揮、高層協調</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Card 2 - 人事部 -->
+                    <div class="dept-card orange">
+                        <div class="dept-header">
+                            <div class="dept-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zm14 10v-2a4 4 0 00-3-3.87M23 21v-2a4 4 0 00-2-3.87m-4-12a4 4 0 010 7.75"/>
+                                </svg>
+                            </div>
+                            <h3 class="dept-name">人事部 (Personnel)</h3>
+                        </div>
+                        <div class="dept-desc">
+                            管理成員的招募、審核、晉升考核及檔案記錄。人事部致力於維護軍團的紀律與人員素質，確保每一位成員都能找到適合的位置。
+                        </div>
+                        <div class="dept-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">部長</span>
+                                <span class="stat-value highlight">Major, Admin</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">幹部人數</span>
+                                <span class="stat-value">8 人</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">職責</span>
+                                <span class="stat-value">招募審核、晉升考核、檔案管理</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Card 3 - 訓練部 -->
+                    <div class="dept-card red">
+                        <div class="dept-header">
+                            <div class="dept-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5 17.5L3 6V3h3l11.5 11.5M13 19l6-6 5 5-6 6-5-5zM3 21h18v-3H3v3z"/>
+                                </svg>
+                            </div>
+                            <h3 class="dept-name">訓練部 (Training)</h3>
+                        </div>
+                        <div class="dept-desc">
+                            組織日常訓練、新兵營課程及戰術演習。訓練部確保所有成員掌握遊戲機制與團隊配合，提升軍團整體戰鬥力。
+                        </div>
+                        <div class="dept-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">部長</span>
+                                <span class="stat-value highlight">Captain, Trainer</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">幹部人數</span>
+                                <span class="stat-value">12 人</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">職責</span>
+                                <span class="stat-value">課程設計、日常訓練、戰術指導</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Card 4 - 後勤部 -->
+                    <div class="dept-card yellow">
+                        <div class="dept-header">
+                            <div class="dept-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 7h-3V4H7v3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM9 5h6v2H9V5zm11 15H4V9h16v11z"/>
+                                    <path d="M7 12h2v5H7zm4 0h2v5h-2zm4 0h2v5h-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="dept-name">後勤部 (Logistics)</h3>
+                        </div>
+                        <div class="dept-desc">
+                            負責物資管理、裝備補給及技術支持。後勤部是軍團堅實的後盾，保障前線作戰無後顧之憂，維護社群平台穩定運行。
+                        </div>
+                        <div class="dept-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">部長</span>
+                                <span class="stat-value highlight">Lt, Support</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">幹部人數</span>
+                                <span class="stat-value">6 人</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">職責</span>
+                                <span class="stat-value">物資管理、技術維護、社群運營</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Card 5 - 外交部 -->
+                    <div class="dept-card green">
+                        <div class="dept-header">
+                            <div class="dept-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                                    <path d="M16.5 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-9 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="dept-name">外交部 (Diplomacy)</h3>
+                        </div>
+                        <div class="dept-desc">
+                            處理與其他軍團的外交關係、聯盟談判及公共關係。外交部代表軍團形象，拓展合作夥伴，營造良好的遊戲環境。
+                        </div>
+                        <div class="dept-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">部長</span>
+                                <span class="stat-value highlight">Major, Diplomat</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">幹部人數</span>
+                                <span class="stat-value">4 人</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">職責</span>
+                                <span class="stat-value">外交談判、聯盟管理、公共關係</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Department Card 6 - 宣傳部 -->
+                    <div class="dept-card purple">
+                        <div class="dept-header">
+                            <div class="dept-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+                                    <path d="M12 14l-4-4v8l4-4zm2 0l4-4v8l-4-4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="dept-name">宣傳部 (Media)</h3>
+                        </div>
+                        <div class="dept-desc">
+                            負責軍團的宣傳物料製作、戰績記錄及內容創作。宣傳部用鏡頭和文字記錄軍團的榮光，提升軍團知名度與凝聚力。
+                        </div>
+                        <div class="dept-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">部長</span>
+                                <span class="stat-value highlight">Lt, Media</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">幹部人數</span>
+                                <span class="stat-value">7 人</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">職責</span>
+                                <span class="stat-value">視頻製作、圖文宣傳、檔案收錄</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <!-- ===== 404 錯誤頁面 ===== -->
     <div id="error-404-page" class="page" role="main" aria-label="404 錯誤頁面">
         <div class="container">
@@ -1955,7 +2362,7 @@
         // 頁面加載時檢查 hash
         document.addEventListener('DOMContentLoaded', function() {
             const hash = window.location.hash.slice(1);
-            if (hash && ['home', 'overview', 'company'].includes(hash)) {
+            if (hash && ['home', 'overview', 'company', 'department'].includes(hash)) {
                 switchPage(hash);
             }
         });
